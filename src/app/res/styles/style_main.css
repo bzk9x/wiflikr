@@ -1,0 +1,82 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    background-color: #221F22;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+}
+
+.title {
+    padding: 7px 0 7px 10px;
+}
+
+.drag-area {
+    flex: 1;
+    app-region: drag;
+}
+
+.window-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 7px 10px 7px 0;
+}
+
+.window-control {
+    width: 15px;
+    height: 15px;
+    background-color: #484548;
+    border-radius: 50%;
+}
+
+main {
+    background-color: green;
+}
+
+.window-dragable-hint-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    padding: 5px;
+    box-sizing: border-box;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.window-dragable-hint-container.active {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.drag-area:hover .window-dragable-hint-container {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.window-dragable-hint {
+    flex: 1;
+    border: dashed 2px #ffffff57;
+    border-radius: 10px;
+}

@@ -5,17 +5,16 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 600,
     height: 400,
-    frame: false,
     maximizable: false,
     resizable: false,
-    transparent: true,
-    focusable: false,
+    frame: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    autoHideMenuBar: true,
   });
 
-  win.loadFile('src/app/res/layout/clock.html');
+  win.loadFile('src/app/res/layout/layout_wiflikr.html');
 }
 
 app.whenReady().then(() => {
