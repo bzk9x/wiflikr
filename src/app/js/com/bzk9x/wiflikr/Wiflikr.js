@@ -1,4 +1,17 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const wallpaperDataUrl = await window.electronAPI.getWallpaper();
+        if (wallpaperDataUrl) {
+            const ambienceImg = document.getElementById('ambience');
+            const wallpaperImg = document.getElementById('wallpaper');
+            
+            if (ambienceImg) ambienceImg.src = wallpaperDataUrl;
+            if (wallpaperImg) wallpaperImg.src = wallpaperDataUrl;
+        }
+    } catch (error) {
+        console.error('Failed to get wallpaper:', error);
+    }
+
     const el = document.getElementById('widget-preview')
     if (!el) return
 
