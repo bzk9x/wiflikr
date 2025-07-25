@@ -2,3 +2,8 @@
     font-family: 'Baloo';
     src: url(Baloo-Regular.ttf);
 }
+
+@font-face {
+    font-family: 'Maple-mono';
+    src: url(maple-mono-latin-800-normal.ttf);
+}
