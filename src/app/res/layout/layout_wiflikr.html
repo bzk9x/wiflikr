@@ -7,17 +7,50 @@
     <link rel="stylesheet" href="../styles/style_main.css">
 </head>
 <body>
-    <nav id="title-bar">
-        <span class="title">
-            Wiflikr
-        </span>
-        <div class="drag-area" id="drag-area"></div>
-        <div class="window-controls">
-            <div class="window-control"></div>
-            <div class="window-control close"></div>
-        </div>
-    </nav>
-    <main></main>
+    <div class="ambience">
+        <img src="../images/geranimo-qzgN45hseN0-unsplash.jpg">
+    </div>
+    <div class="wiflikr">
+        <nav id="title-bar">
+            <span class="title">
+                Wiflikr
+            </span>
+            <div class="drag-area" id="drag-area"></div>
+            <div class="window-controls">
+                <div class="window-control"></div>
+                <div class="window-control close"></div>
+            </div>
+        </nav>
+        <main>
+            <div class="preview">
+                <div class="widget-preview" id="widget-preview">
+                    <div class="wallpaper-container">
+                        <img src="../images/geranimo-qzgN45hseN0-unsplash.jpg" class="wallpaper">
+                        <div class="widget shape-1" id="widget">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="editor">
+                <div class="tabs">
+                    <div class="tabs-container">
+                        <div class="tab shape-tab active">
+                            <span>Shape</span>
+                        </div>
+                        <div class="tab widget-tab">
+                            <span>Widget</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shapes">
+                    <div class="shape type1" id="widget-shape-1"></div>
+                    <div class="shape type2" id="widget-shape-2"></div>
+                    <div class="shape type3" id="widget-shape-3"></div>
+                </div>
+            </div>
+        </main>
+    </div>
     <div class="window-dragable-hint-container" id="window-dragable-hint-container">
         <div class="window-dragable-hint"></div>
     </div>

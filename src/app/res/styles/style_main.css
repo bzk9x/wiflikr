@@ -7,12 +7,37 @@ html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #fff;
     font-weight: 500;
-    background-color: #221F22;
+    user-select: none;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.wiflikr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #221f22c1;
+    backdrop-filter: blur(25px);
+}
+
+.ambience {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+
+.ambience img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 nav {
@@ -42,10 +67,187 @@ nav {
     height: 15px;
     background-color: #484548;
     border-radius: 50%;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.close {
+    background-color: #FF5F56;
+}
+
+.window-control:hover {
+    filter: brightness(1.5);
 }
 
 main {
-    background-color: green;
+    display: flex;
+    padding: 0 10px 10px 10px;
+    gap: 10px;
+    flex: 1;
+}
+
+.preview {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widget-preview {
+    height: 200px;
+    flex: 1;
+    margin: 0 20px;
+    border-radius: 12px;
+    background: #000;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+    display: flex;
+    overflow: hidden;
+    padding: 7px;
+    box-sizing: border-box;
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+}
+
+.widget-preview.scaled {
+    transform: scale(1.1);
+}
+
+.wallpaper-container {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.wallpaper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(2.0);
+}
+
+.widget {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #221f22;
+    border-radius: 10px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+    transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+}
+
+.widget.shape-1 {
+    width: 100px;
+    height: 100px;
+}
+
+.widget.shape-2 {
+    width: 100px;
+    height: 150px;
+}
+
+.widget.shape-3 {
+    width: 150px;
+    height: 100px;
+}
+
+.editor {
+    flex: 2;
+    background-color: #2D2A2E;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.tabs {
+    padding: 7px;
+}
+
+.tabs-container {
+    display: flex;
+    align-items: center;
+    background-color: #221f22;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.tab {
+    border-radius: 99px;
+    padding: 3px 20px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.tab.active {
+    background-color: #484548;
+}
+
+.shape-tab {
+    flex: 1;
+}
+
+.widget-tab {
+    flex: 1;
+}
+
+.shapes {
+    position: absolute;
+    flex: 1;
+    display: flex;
+    flex-shrink: 0;
+    gap: 10px;
+    flex-direction: column;
+    padding: 0 0 7px 10px;
+    overflow-y: scroll;
+    height: 88%;
+    margin-top: 15%;
+    width: 90%;
+}
+
+.shapes::-webkit-scrollbar {
+    width: 10px;
+}
+
+.shapes::-webkit-scrollbar-track {
+    background: #221f22;
+    border-radius: 99px;
+}
+
+.shapes::-webkit-scrollbar-thumb {
+    background: #484548;
+    border-radius: 99px;
+}
+
+.shape {
+    flex-shrink: 0;
+    background-color: #484548;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.type1 {
+    width: 100px;
+    height: 100px;
+}
+
+.type2 {
+    width: 100px;
+    height: 150px;
+}
+
+.type3 {
+    width: 150px;
+    height: 100px;
 }
 
 .window-dragable-hint-container {
