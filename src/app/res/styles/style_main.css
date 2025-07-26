@@ -292,3 +292,30 @@ main {
     border: dashed 2px #ffffff57;
     border-radius: 10px;
 }
+
+.cta {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 0;
+}
+
+.cta-btn {
+    font-size: .7em;
+    border: none;
+    background-color: #48454879;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(25px);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.cta-btn:hover {
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.5);
+}
+
+.cta-btn:active {
+    filter: brightness(1.5) blur(1px);
+}

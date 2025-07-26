@@ -49,6 +49,23 @@ function createWindow() {
   win.loadFile('src/app/res/layout/layout_wiflikr.html');
 }
 
+function createSquareWidget() {
+  const widgetWindow = new BrowserWindow({
+    width: 100,
+    height: 100,
+    maximizable: false,
+    resizable: false,
+    frame: false,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: true,
+      nodeIntegration: false,
+    },
+  });
+
+  widgetWindow.loadFile('src/app/res/layout/widgets/square.html');
+}
+
 app.whenReady().then(() => {
   ipcMain.handle('get-wallpaper', async () => {
     const wallpaperPath = getWallpaperPath();
