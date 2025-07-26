@@ -1,7 +1,9 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  getWallpaper: () => ipcRenderer.invoke('get-wallpaper')
+  getWallpaper: () => ipcRenderer.invoke('get-wallpaper'),
+  createWidget: (type) => ipcRenderer.invoke('create-widget', type),
+  saveWidgetConfig: (config) => ipcRenderer.invoke('save-widget-config', config)
 });
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -14,4 +16,3 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${dependency}-version`, process.versions[dependency]);
   }
 });
-  

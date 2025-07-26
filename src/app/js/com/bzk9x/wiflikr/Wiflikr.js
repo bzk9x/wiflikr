@@ -52,4 +52,30 @@ window.addEventListener('DOMContentLoaded', async () => {
         widgetShape1.classList.remove('selected');
         widgetShape2.classList.remove('selected');
     });
+
+    const addWidgetButton = document.getElementById('add-widget');
+    if (addWidgetButton) {
+        addWidgetButton.addEventListener('click', async () => {
+            let widgetType = '';
+
+            if (widgetShape1.classList.contains('selected')) {
+                widgetType = 'square';
+            } else if (widgetShape2.classList.contains('selected')) {
+                widgetType = 'portrait';
+            } else if (widgetShape3.classList.contains('selected')) {
+                widgetType = 'landscape';
+            }
+            
+            if (widgetType) {
+                try {
+                    const result = await window.electronAPI.createWidget(widgetType);
+                    if (!result.success) {
+                        console.error('Failed to create widget:', result.error);
+                    }
+                } catch (error) {
+                    console.error('Error creating widget:', error);
+                }
+            }
+        });
+    }
 })
